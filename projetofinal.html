@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Estilos CSS específicos para a página de detalhes do projeto -->
+    <!-- <style>
+        
+    </style> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Projeto Final</h1>
+            <!-- <nav>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#contactos">Contactos</a></li>
+                </ul>
+            </nav> -->
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="project-details">
+            <div class="projeto">
+                <h2>Aplicação Móvel</h2>
+                <p>Este projeto foi desenvolvido no âmbito da unidade curricular <b>Projeto de Engenharia Informática em Contexto Empresarial</b>
+                    no <b><a href="https://ispgaya.pt/pt" target="_blank">Instituto Superior Politécnico de Gaia (ISPGAYA)</a>.</b><br>
+                    Com o desenvolvimento tendo início em abril de 2024 e final a meio de junho de 2024, esta é uma aplicação financeira, que procura facilitar o quotidiano
+                    dos cidadãos portugueses, no que diz respeito ao controlo dos seus gastos mensais e anuais, bem como determinadas obrigações.
+                    <br>
+                    Esta aplicação conta com funcionalidades como:
+                    <li>Leitor de códigos QR;</li>
+                    <li>Vinculação de contas;</li>
+                    <li>Gráficos de análise;</li>
+                    <li>Pesquisa avançada;</li>
+                    <li>Relatórios;</li>
+                    <li>Armazenamento de relatórios na nuvem;</li>
+                    <li>Personalização ao gosto do utilizador.</li>
+                    <br>
+
+                <p><i class="fas fa-file-pdf"></i> <a href="files/Miguel Coelho - 2019103720.pdf" download>Relatório Final</a></p>
+            </div>
+            <div class="center">
+                <div class="image-description">
+                    <p id="image-description-text">Iniciar sessão</p>
+                </div>
+                <div class="image-viewer">
+                    <img src="assets/iniciar sessão - dark.jpg" class="active" alt="Print 1">
+                    <img src="assets/página principal.jpg" alt="Print 2">
+                    <img src="assets/gráfico circular.jpg" alt="Print 3">
+                    <img src="assets/gráfico de barras.jpg" alt="Print 4">
+                    <img src="assets/relatórios.jpg" alt="Print 6">
+                    <img src="assets/qr_scanner.gif" alt="GIF QR">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                    <div class="dots-container">
+                        <span class="dot active" onclick="currentImage(1)"></span>
+                        <span class="dot" onclick="currentImage(2)"></span>
+                        <span class="dot" onclick="currentImage(3)"></span>
+                        <span class="dot" onclick="currentImage(4)"></span>
+                        <span class="dot" onclick="currentImage(5)"></span>
+                        <span class="dot" onclick="currentImage(6)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="canva-viewer">
+            <div class="container">
+                <h2>Apresentação</h2>
+                <div class="canva-embed-container">
+                    <iframe loading="lazy" class="canva-embed-iframe" src="https://www.canva.com/design/DAGIhb3b4j0/7ooLNem231UIqtJrf5Bh9Q/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.image-viewer img');
+        const dots = document.querySelectorAll('.dot');
+        const descriptions = [
+            "Página de início de sessão",
+            "Página principal da aplicação",
+            "Gráfico circular",
+            "Gráfico de barras",
+            "Relatório (Excel e PDF)",
+            "Utilização do leitor de códigos QR"
+        ];
+        const descriptionText = document.getElementById('image-description-text');
+
+        function changeImage(n) {
+            images[currentImageIndex].classList.remove('active');
+            dots[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + n + images.length) % images.length;
+            images[currentImageIndex].classList.add('active');
+            dots[currentImageIndex].classList.add('active');
+            descriptionText.innerText = descriptions[currentImageIndex];
+        }
+
+        function currentImage(n) {
+            images[currentImageIndex].classList.remove('active');
+            dots[currentImageIndex].classList.remove('active');
+            currentImageIndex = n - 1;
+            images[currentImageIndex].classList.add('active');
+            dots[currentImageIndex].classList.add('active');
+            descriptionText.innerText = descriptions[currentImageIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (images.length <= 1) {
+                document.querySelector('.prev').style.display = 'none';
+                document.querySelector('.next').style.display = 'none';
+            } else {
+                images[currentImageIndex].classList.add('active');
+                dots[currentImageIndex].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

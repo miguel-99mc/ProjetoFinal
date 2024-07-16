@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #dba24c;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #d9780b;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 1000;
+    align-items: end;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+.projeto {
+    margin-bottom: 1.5rem;
+}
+
+.projeto h3 {
+    margin-bottom: 0.5rem;
+}
+
+header a{
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f4f4f4;
+}
+
+#canva-viewer {
+    padding: 2rem 0;
+    margin: 2rem 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#canva-viewer h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.canva-embed-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 0;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+    overflow: hidden;
+    background: #fff;
+}
+
+.canva-embed-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin: 0 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.project-details {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.project-details h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.project-details p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.center {
+    text-align: center;
+}
+
+.image-viewer {
+    position: relative;
+    justify-content: center; 
+    align-items: center;
+    display: inline-block;
+    max-width: 20%;
+    max-height: 700px;
+    overflow: hidden;
+}
+
+.image-viewer img {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    justify-content: center; 
+    align-items: center;
+}
+
+.image-viewer img.active {
+    display: block;
+}
+
+.image-viewer .prev,
+.image-viewer .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.image-viewer .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.image-viewer .prev {
+    left: 0;
+}
+
+.image-viewer .prev:hover,
+.image-viewer .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-indicator {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #717171;
+}
